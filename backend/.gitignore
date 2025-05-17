@@ -1,0 +1,29 @@
+# Go binaries and build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace & dependencies
+/bin/
+/vendor/
+/coverage.out
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output (if you use dist or static for builds)
+dist/
+static/
+

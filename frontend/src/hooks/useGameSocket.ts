@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { protocol } from "@/utils/getProtocol";
 
 export type MessageType =
   | "game_started"
@@ -44,7 +45,7 @@ export function useGameSocket(playerID: string, roomID: string) {
       if (hasErrorRef.current || isUnmounted) return;
 
       const socket = new WebSocket(
-        `ws://${process.env.NEXT_PUBLIC_BACKEND_URL}/ws/${roomID}/${playerID}`,
+        `${protocol}://${process.env.NEXT_PUBLIC_BACKEND_URL}/ws/${roomID}/${playerID}`,
       );
       socketRef.current = socket;
 

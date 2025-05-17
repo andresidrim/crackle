@@ -1,6 +1,8 @@
+import { protocol } from "@/utils/getProtocol";
+
 export async function isNameTaken(roomID: string, playerID: string) {
   const res = await fetch(
-    `http://${process.env.NEXT_PUBLIC_BACKEND_URL}/rooms/${roomID}/players/${playerID}/exists`,
+    `${protocol}://${process.env.NEXT_PUBLIC_BACKEND_URL}/rooms/${roomID}/players/${playerID}/exists`,
   );
 
   if (!res.ok) {

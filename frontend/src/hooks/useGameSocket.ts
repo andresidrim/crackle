@@ -45,7 +45,7 @@ export function useGameSocket(playerID: string, roomID: string) {
       if (hasErrorRef.current || isUnmounted) return;
 
       const socket = new WebSocket(
-        `${getProtocol().websocket}://${process.env.NEXT_PUBLIC_BACKEND_URL}/ws/${roomID}/${playerID}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL_WS}/ws/${roomID}/${playerID}`,
       );
       socketRef.current = socket;
 

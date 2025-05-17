@@ -1,8 +1,8 @@
-import { protocol } from "@/utils/getProtocol";
+import { getProtocol } from "@/utils/getProtocol";
 
 export async function roomHasPassword(roomID: string) {
   const res = await fetch(
-    `${protocol}://${process.env.NEXT_PUBLIC_BACKEND_URL}/rooms/${roomID}/has-password`,
+    `${getProtocol().http}://${process.env.NEXT_PUBLIC_BACKEND_URL}/rooms/${roomID}/has-password`,
   );
 
   if (!res.ok) {

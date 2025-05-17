@@ -1,4 +1,4 @@
-import { protocol } from "@/utils/getProtocol";
+import { getProtocol } from "@/utils/getProtocol";
 
 export async function createRoom(
   roomID: string,
@@ -6,7 +6,7 @@ export async function createRoom(
   playerID: string,
 ) {
   const res = await fetch(
-    `${protocol}://${process.env.NEXT_PUBLIC_BACKEND_URL}/rooms`,
+    `${getProtocol().http}://${process.env.NEXT_PUBLIC_BACKEND_URL}/rooms`,
     {
       method: "POST",
       body: JSON.stringify({ roomID, password, playerID }),

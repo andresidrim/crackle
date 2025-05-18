@@ -37,41 +37,6 @@ project-root/
 
 ---
 
-## ☁️ Deployment
-
-### Backend (Fly.io)
-
-1. Install [Fly CLI](https://fly.io/docs/hands-on/install-flyctl/)
-2. Launch app:
-
-```bash
-cd backend
-fly launch
-fly deploy
-```
-
-Set environment variable:
-
-```bash
-fly secrets set FRONTEND_URL=https://crackle-one.vercel.app
-```
-
----
-
-### Frontend (Vercel)
-
-1. Deploy via [vercel.com](https://vercel.com)
-2. Add these environment variables in Vercel Dashboard:
-
-```env
-NEXT_PUBLIC_BACKEND_URL_HTTP=https://<your-fly-app>.fly.dev
-NEXT_PUBLIC_BACKEND_URL_WS=wss://<your-fly-app>.fly.dev
-```
-
-> Example: `crackle.fly.dev`
-
----
-
 ## 🧠 Features
 
 - Realtime multiplayer with WebSocket
